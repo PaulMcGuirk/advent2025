@@ -36,6 +36,7 @@ fn read_and_parse_input() -> Vec<(Op, Vec<Vec<u64>>)> {
 
     let mut c = 0;
     while c < num_cols {
+        // the operator positions define the column
         let c_init = c;
         let op = match chars[num_rows - 1][c] {
             '+' => Op::Add,
