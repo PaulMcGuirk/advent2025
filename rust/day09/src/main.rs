@@ -57,7 +57,10 @@ fn intersects(ab: &((i64, i64), (i64, i64)), cd: &((i64, i64), (i64, i64))) -> b
 fn polygon_contains(vertices: &Vec<(i64, i64)>, pt: &(i64, i64)) -> bool {
     let min_0 = vertices.iter().map(|v| v.0).min().unwrap();
     let min_1 = vertices.iter().map(|v| v.1).min().unwrap();
-    let other = (min_0 - 1, min_1 - 1); // outside of the polygon based on problem spec - can treat this as infinity
+    // outside of the polygon based on problem spec - can treat this as infinity
+    // also conveniently oblique to the polygon edges so bypasses nonsense with
+    // parallel edges
+    let other = (min_0 - 1, min_1 - 1);
 
     let mut intersection_count = 0;
     for k in 0..vertices.len() {
