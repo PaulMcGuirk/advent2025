@@ -64,14 +64,6 @@ fn polygon_contains(vertices: &Vec<(i64, i64)>, pt: &(i64, i64)) -> bool {
         let next_k = (k + 1) % vertices.len();
         if intersects(&(*pt, other), &(vertices[k], vertices[next_k])) {
             intersection_count += 1;
-            if pt == &(7, 4) {
-                println!(
-                    "{} {:?} {:?}",
-                    intersection_count,
-                    &(vertices[k], vertices[next_k]),
-                    &(other, pt)
-                );
-            }
         }
     }
 
