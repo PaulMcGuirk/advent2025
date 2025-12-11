@@ -214,8 +214,6 @@ impl Machine {
                 .collect();
         }
 
-        // println!("{:?}", combos);
-
         *combos
             .iter()
             .filter_map(|(combo, pushes)| {
@@ -240,7 +238,7 @@ fn solve_part_two(machines: &Vec<Machine>) -> u64 {
 
 fn main() {
     println!("Advent of Code 2025");
-    println!("Day 9: Factory");
+    println!("Day 10: Factory");
 
     let now = Instant::now();
 
